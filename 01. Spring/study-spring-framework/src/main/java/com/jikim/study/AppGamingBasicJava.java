@@ -2,19 +2,14 @@ package com.jikim.study;
 
 import com.jikim.study.game.GameRunner;
 import com.jikim.study.game.MarioGame;
-import com.jikim.study.game.PacManGame;
-import com.jikim.study.game.SuperContraGame;
 
 public class AppGamingBasicJava {
 	public static void main(String[] args) {
+		// 1. Object Creation
 		var marioGame = new MarioGame();
+		// 2. Object Creation + Wiring of Dependencies
+		// Game is a Dependency of GameRunner
 		var gameRunner = new GameRunner(marioGame);
-		gameRunner.run();
-		var superContraGame = new SuperContraGame();
-		gameRunner = new GameRunner(superContraGame);
-		gameRunner.run();
-		var pacManGame = new PacManGame();
-		gameRunner = new GameRunner(pacManGame);
 		gameRunner.run();
 	}
 }
