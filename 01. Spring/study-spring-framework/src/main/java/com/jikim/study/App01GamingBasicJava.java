@@ -3,7 +3,7 @@ package com.jikim.study;
 import com.jikim.study.game.GameRunner;
 import com.jikim.study.game.MarioGame;
 
-public class AppGamingBasicJava {
+public class App01GamingBasicJava {
 	public static void main(String[] args) {
 		// 1. Object Creation
 		var marioGame = new MarioGame();
