@@ -1,5 +1,8 @@
 package com.jikim.study.game;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class GameRunner {
 
 	private GamingConsole game;
