@@ -19,15 +19,10 @@ class MyBusinessClass {
 
 	Dependency2 dependency2;
 
-	@Autowired
-	public void setDependency1(Dependency1 dependency1) {
-		System.out.println("Setter Injection - setDependency1");
+	// @Autowired // 생략 가능
+	public MyBusinessClass(Dependency1 dependency1, Dependency2 dependency2) {
+		System.out.println("Constructor Injection - MyBusinessClass");
 		this.dependency1 = dependency1;
-	}
-
-	@Autowired
-	public void setDependency2(Dependency2 dependency2) {
-		System.out.println("Setter Injection - setDependency2");
 		this.dependency2 = dependency2;
 	}
 
