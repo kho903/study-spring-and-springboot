@@ -1,11 +1,8 @@
-package com.jikim.study;
+package com.jikim.study.game;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-
-import com.jikim.study.game.GameRunner;
-import com.jikim.study.game.GamingConsole;
 
 @Configuration
 @ComponentScan("com.jikim.study.game")
