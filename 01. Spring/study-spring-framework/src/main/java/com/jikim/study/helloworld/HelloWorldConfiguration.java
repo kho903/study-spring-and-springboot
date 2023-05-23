@@ -1,4 +1,4 @@
-package com.jikim.study;
+package com.jikim.study.helloworld;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
