@@ -1,8 +1,9 @@
 package com.jikim.study.examples.c1;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+// @Component
+@Repository
 public class MySQLDataService implements DataService {
 	@Override
 	public int[] retrieveData() {
