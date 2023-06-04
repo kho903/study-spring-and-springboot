@@ -1,8 +1,19 @@
 package com.jikim.learnjpaandhibernate.course;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Course {
+
+	@Id
 	private long id;
+
+	// 같으므로 생략 가능.
+	// @Column(name = "name")
 	private String name;
+
+	// @Column(name = "author")
 	private String author;
 
 	public Course() {
