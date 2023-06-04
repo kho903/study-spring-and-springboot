@@ -1,4 +1,4 @@
-package com.jikim.learnjpaandhibernate.jdbc;
+package com.jikim.learnjpaandhibernate.course.jdbc;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
