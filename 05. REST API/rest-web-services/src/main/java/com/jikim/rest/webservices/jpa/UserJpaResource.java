@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.jikim.rest.webservices.user.Post;
 import com.jikim.rest.webservices.user.User;
 import com.jikim.rest.webservices.user.UserDaoService;
 import com.jikim.rest.webservices.user.UserNotFoundException;
@@ -57,6 +58,14 @@ public class UserJpaResource {
 	@DeleteMapping("/users/{id}")
 	public void deleteUser(@PathVariable int id) {
 		repository.deleteById(id);
+	}
+
+	@GetMapping("/users/{id}/posts")
+	public List<Post> retrievePostsForUser(@PathVariable int id) {
+		User user = repository.findById(id)
+			.orElseThrow(() -> new UserNotFoundException("id:" + id));
+
+		return user.getPosts();
 	}
 
 	@PostMapping("/users")
