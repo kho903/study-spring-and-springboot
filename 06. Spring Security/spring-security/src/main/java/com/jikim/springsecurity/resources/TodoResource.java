@@ -30,10 +30,10 @@ public class TodoResource {
 		return TODOS_LIST.get(0);
 	}
 
-	/*@PostMapping("/users/{username}/todos")
+	@PostMapping("/users/{username}/todos")
 	public void createTodoForSpecificUser(@PathVariable String username, @RequestBody Todo todo) {
 		logger.info("Creating {} for {}", todo, username);
-	}*/
+	}
 }
 
 record Todo(String username, String description) {
