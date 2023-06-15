@@ -20,7 +20,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.jikim.rest.webservices.user.Post;
 import com.jikim.rest.webservices.user.User;
-import com.jikim.rest.webservices.user.UserDaoService;
 import com.jikim.rest.webservices.user.UserNotFoundException;
 
 import jakarta.validation.Valid;
@@ -30,9 +29,11 @@ import jakarta.validation.Valid;
 public class UserJpaResource {
 
 	private UserRepository repository;
+	private PostRepository postRepository;
 
-	public UserJpaResource(UserRepository repository) {
+	public UserJpaResource(UserRepository repository, PostRepository postRepository) {
 		this.repository = repository;
+		this.postRepository = postRepository;
 	}
 
 	@GetMapping("/users")
@@ -74,6 +75,20 @@ public class UserJpaResource {
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest()
 			.path("/{id}")
 			.buildAndExpand(savedUser.getId())
+			.toUri();
+		return ResponseEntity.created(location).build();
+	}
+
+	@PostMapping("/users/{id}/posts")
+	public ResponseEntity<Post> createPostForUser(@PathVariable int id, @Valid @RequestBody Post post) {
+		User user = repository.findById(id)
+			.orElseThrow(() -> new UserNotFoundException("id:" + id));
+
+		post.setUser(user);
+		Post savedPost = postRepository.save(post);
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+			.path("/{id}")
+			.buildAndExpand(savedPost.getId())
 			.toUri();
 		return ResponseEntity.created(location).build();
 	}
