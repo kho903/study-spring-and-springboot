@@ -12,7 +12,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -39,11 +39,15 @@ public class BasicAuthSecurityConfiguration {
 	@Bean
 	public UserDetailsService userDetailsService(DataSource dataSource) {
 		var user = User.withUsername("user")
-			.password("{noop}1234")
+			// .password("{noop}1234")
+			.password("1234")
+			.passwordEncoder(str -> passwordEncoder().encode(str))
 			.roles("USER")
 			.build();
 		var admin = User.withUsername("admin")
-			.password("{noop}1234")
+			// .password("{noop}1234")
+			.password("1234")
+			.passwordEncoder(str -> passwordEncoder().encode(str))
 			.roles("ADMIN", "USER")
 			.build();
 
@@ -59,5 +63,10 @@ public class BasicAuthSecurityConfiguration {
 			.setType(EmbeddedDatabaseType.H2)
 			.addScript(DEFAULT_USER_SCHEMA_DDL_LOCATION)
 			.build();
+	}
+
+	@Bean
+	public BCryptPasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
 	}
 }
