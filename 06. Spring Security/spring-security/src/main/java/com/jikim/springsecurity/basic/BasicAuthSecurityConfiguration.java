@@ -75,8 +75,4 @@ public class BasicAuthSecurityConfiguration {
 		return new BCryptPasswordEncoder();
 	}
 
-	@Bean
-	public JwtEncoder jwtEncoder(JWKSource<SecurityContext> jwkSource) {
-		return new NimbusJwtEncoder(jwkSource);
-	}
 }
