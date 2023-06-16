@@ -17,9 +17,12 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 import com.nimbusds.jose.JOSEException;
@@ -49,7 +52,26 @@ public class JwtSecurityConfiguration {
 
 		return http.build();
 	}
+	@Bean
+	public UserDetailsService userDetailsService(DataSource dataSource) {
+		var user = User.withUsername("user")
+			// .password("{noop}1234")
+			.password("1234")
+			.passwordEncoder(str -> passwordEncoder().encode(str))
+			.roles("USER")
+			.build();
+		var admin = User.withUsername("admin")
+			// .password("{noop}1234")
+			.password("1234")
+			.passwordEncoder(str -> passwordEncoder().encode(str))
+			.roles("ADMIN", "USER")
+			.build();
 
+		var jdbcUserDetailsManager = new JdbcUserDetailsManager(dataSource);
+		jdbcUserDetailsManager.createUser(user);
+		jdbcUserDetailsManager.createUser(admin);
+		return jdbcUserDetailsManager;
+	}
 	@Bean
 	public DataSource dataSource() {
 		return new EmbeddedDatabaseBuilder()
