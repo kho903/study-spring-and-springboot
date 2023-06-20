@@ -1,0 +1,14 @@
+# Introduction to Unit Testing with JUnit
+- Large applications can have 1000s of code files and millions of lines of code
+- Testing : Check app behavior against expected behavior
+	- Option 1 : Deploy the complete application and test
+		- This is called System Testing or Integration Testing
+	- Option 2 : Test specific units of application code independently
+		- Examples : A specific method or group of methods
+		- This is called Unit Testing
+		- Advantages of Unit Testing
+			- Finds bugs early (run under CI)
+			- Easy to fix bugs
+			- Reduces costs in the long run
+		- Most Popular Java Frameworks : JUnit and Mockito
+	- Recommended : Option 1 + 2
