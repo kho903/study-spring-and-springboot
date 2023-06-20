@@ -19,4 +19,7 @@ public class CommonPointcutConfig {
 
 	@Pointcut("bean(*Service*)")
 	public void dataPackageConfigUsingBean() {}
+
+	@Pointcut("@annotation(com.jikim.learnspringaop.aop.annotations.TrackTime)")
+	public void trackTimeAnnotation() {}
 }

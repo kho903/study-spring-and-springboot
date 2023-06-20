@@ -2,9 +2,12 @@ package com.jikim.learnspringaop.aop.data;
 
 import org.springframework.stereotype.Component;
 
+import com.jikim.learnspringaop.aop.annotations.TrackTime;
+
 @Component
 public class DataService2 {
 
+	@TrackTime
 	public int[] retrieveData() {
 		try {
 			Thread.sleep(30);
