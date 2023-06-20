@@ -22,3 +22,14 @@
   - Downloaded dependencies are stored inside your maven local repository
   - Local Repository : a temp folder on your machine where maven stores the jar and
     depdency files that are downloaded from Maven Repository.
+
+# Important Maven Commands
+- mvn --version
+- mvn compile : Compile source files
+- mvn test-compile : Compile test files
+  - OBSERVE CAREFULLY : This will also compil source files
+- mvn clean : Delete target directory
+- mvn test : Run units tests
+- mvn package : Create a jar
+- mvn help : effective-pom
+- mvn dependency:tree
