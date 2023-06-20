@@ -32,3 +32,16 @@
 	- Use dependency management enabled by spring-boot-dependencies
 		- No need to specify dependency version
 			- Ex : implementation('org.springframework.boot:spring-boot-starter')
+
+# Maven vs Gradle - Which one to Use?
+- Let's start with a fwe popular examples:
+	- Spring Framework - Using Gradle since 2012 (Spring Framework v3.2.0)
+	- Spring Boot - Using Gradle since 2020 (Spring Boot v2.3.0)
+	- Spring Cloud - Continues to use Maven even today
+		- Last update: Spring Cloud has no plans to switch
+- Top Maven Advantages : Familiar, Simple and Restrictive
+- Top Gradle Advantages : Faster build times and less verbose
+- RECOMMEND
+	- Choose whatever tool best beets your project needs
+	- If your builds are taking really long, go with Gradle
+	- If your builds are simple, stick with Maven
