@@ -1,0 +1,16 @@
+# Gradle
+- Goal : Build, automate and deliver better software, faster
+	- Build Anything : Cross-Platform Tool
+		- Java, C/C++, JavaScript, Python, ...
+	- Automate Everything : Completely Programmable
+		- Complete flexibility
+		- Uses a DSL
+			- Supports Groovy and Kotlin
+	- Deliver Faster : Blazing-fast builds
+		- Compile avoidance to advanced caching
+		- Can speed up Maven builds by up to 90%
+			- Incrementality - Gradle runs only What is necessary
+				- Example : Compiles only changed files
+			- Build Cache - Reuses the build outputs of other Gradle builds with the same inputs
+- Same project layout as Maven
+- IDE supports still evolving
