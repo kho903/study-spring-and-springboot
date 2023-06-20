@@ -9,3 +9,16 @@
   - Verify
   - Install
   - Deploy
+
+# How does Maven Work?
+- Maven follows Convention over Configuration
+  - Pre defined folder structure
+  - Almost all Java projects follow Maven structure (Consistency)
+- Maven central repository contains jars (and others) indexed by artifact id and group id
+  - Stores all the versions of dependencies
+  - repositories -> repository
+  - pluginRepositories -> pluginRepository
+- When a dependency is added to pom.xml, Maven tries to download the dependency
+  - Downloaded dependencies are stored inside your maven local repository
+  - Local Repository : a temp folder on your machine where maven stores the jar and
+    depdency files that are downloaded from Maven Repository.
