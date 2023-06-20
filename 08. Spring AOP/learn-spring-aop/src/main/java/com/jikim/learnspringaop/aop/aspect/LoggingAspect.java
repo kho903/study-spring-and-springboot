@@ -25,7 +25,7 @@ public class LoggingAspect {
 	// Before Aspect - Method is called - execution(int com.jikim.learnspringaop.aop.business.BusinessService1.calculateMax())
 	// @Before("execution(* com.jikim.learnspringaop.aop.data.*.*(..))")
 	// Before Aspect - Method is called - execution(int[] com.jikim.learnspringaop.aop.data.DataService1.retrieveData())
-	@Before("execution(* com.jikim.learnspringaop.aop.*.*.*(..))")
+	@Before("com.jikim.learnspringaop.aop.aspect.CommonPointcutConfig.dataPackageConfigUsingBean()")
 	/*
 	Before Aspect - Method is called - execution(int com.jikim.learnspringaop.aop.business.BusinessService1.calculateMax())
     Before Aspect - Method is called - execution(int[] com.jikim.learnspringaop.aop.data.DataService1.retrieveData())
@@ -36,14 +36,14 @@ public class LoggingAspect {
 			, joinPoint, joinPoint.getArgs());
 	}
 
-	@After("execution(* com.jikim.learnspringaop.aop.*.*.*(..))")
+	@After("com.jikim.learnspringaop.aop.aspect.CommonPointcutConfig.businessPackageConfig()")
 	public void logMethodCallAfterExecution(JoinPoint joinPoint) {
 		// Logic - What?
 		logger.info("After Aspect - {} has executed", joinPoint);
 	}
 
 	@AfterThrowing(
-		pointcut = "execution(* com.jikim.learnspringaop.aop.*.*.*(..))",
+		pointcut = "com.jikim.learnspringaop.aop.aspect.CommonPointcutConfig.businessAndDataPackageConfig()",
 		throwing = "exception"
 	)
 	public void logMethodCallAfterException(JoinPoint joinPoint, Exception exception) {
@@ -53,7 +53,7 @@ public class LoggingAspect {
 	}
 
 	@AfterReturning(
-		pointcut = "execution(* com.jikim.learnspringaop.aop.*.*.*(..))",
+		pointcut = "com.jikim.learnspringaop.aop.aspect.CommonPointcutConfig.dataPackageConfig()",
 		returning = "resultValue"
 	)
 	public void logMethodCallAfterSuccessfulExecution(JoinPoint joinPoint,
