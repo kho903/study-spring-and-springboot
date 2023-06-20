@@ -29,6 +29,7 @@ public class LoggingAspect {
 	 */
 	public void logMethodCall(JoinPoint joinPoint) {
 		// Logic - What?
-		logger.info("Before Aspect - Method is called - {}", joinPoint);
+		logger.info("Before Aspect - {} is called with arguments - {} "
+			, joinPoint, joinPoint.getArgs());
 	}
 }
