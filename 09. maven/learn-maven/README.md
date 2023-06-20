@@ -1,0 +1,11 @@
+# Maven Build Life Cycle
+- When we run a maven command, maven build life cycle is used
+- Build LifeCycle is a sequence of steps
+  - Validate
+  - Compile
+  - Test
+  - Package
+  - Integration Test
+  - Verify
+  - Install
+  - Deploy
