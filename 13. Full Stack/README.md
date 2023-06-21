@@ -31,3 +31,21 @@
 		- EcmaScript is standard
 		- JavaScript is implementation
 - GOOD NEWS : Writing Good JavaScript code is not so difficult :)
+
+# Installing Node.js and npm
+- Download node.js
+	- Install latest version of Node.js
+		- node --version
+		- npm --version
+	- Troubleshooting:
+		- Google for "npm troubleshooting"
+- npm : Package Manager for JavaScript
+	- Similar to Maven/Gradle in Java world
+	- npm init : Create new project
+	- package.json : Your dependency definitions
+	- Add a dependency:
+		- npm install jquery
+		- You don't need to download and manage versions
+	- node_modules : Downloded dependencies (temp)
+
+
