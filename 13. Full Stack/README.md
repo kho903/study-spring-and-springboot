@@ -90,3 +90,18 @@
 - How is the magic happening?
 	- Create React App
 	- Automatically builds and renders in the browser
+
+# Exploring Create React App Folder Structure
+- Goal : Get a 10,000 feet overview of folder structure
+	- README.md : Documentation
+	- package.json : Define dependencies (similar to Maven pom.xml)
+	- node_modules : Folder where all dependencies are downloaded to
+	- React Initialization
+		- public/index.html : Contains root div
+		- src/index.js : Initializes React App. Loads App Component.
+			- src/index.css - styling for entire application
+		- src/App.js : Code for App component
+			- src/App.css - Styling for App component
+			- src/App.test.js - Unit tests for App component
+				- Unit test is right along side production code (Different to Java approach)
+
