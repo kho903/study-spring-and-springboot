@@ -123,3 +123,26 @@
 	- Hooks are very easy to use
 	- useState hook allows adding state to Function Components
 
+# Getting Started with JSX - Views with React
+- React project use JSX for presentation
+- Stricter than HTML
+	- Close tags are mandatory
+	- Only one top-level tag allowed:
+		- Cannot return multiple top-level JSX tags
+		- Wrap into a shared parent
+			- `<div>...</div>` or `<>...</>` (empty wrapper)
+- How is JSX enabled in a React project?
+	- Different browsers have different support levels modern JS features (ES2015, ..., ES2022, ...)
+		- How to ensure backward compatibility for your JS code?
+		- Solution : Babel
+		- Babel alse converts JSX to JS
+
+# Let's play with Babel and JSX
+- Let's try Babel : https://babeljs.io/
+- Let's try JSX in our components
+	- Parentheses () make returning complex JSX values easier
+	- Custom Components should start with upper case letter
+		- For HTML you should use small case
+	- Specify CSS class - className
+		- Simililar to HTML class attribute
+
