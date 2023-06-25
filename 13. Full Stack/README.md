@@ -68,3 +68,25 @@
 		- cd todo-app
 		- npm start
 
+# Important Command
+- npm start : Runs the app in development mode
+	- Recommendation : Use Google Chrome
+- npm test : Run unit tests
+- npm run build : Build a production deployable unit
+	- Minified
+	- Optimized for performance
+- npm install --save react-router-dom : Add a dependency to my project
+
+# Visual Studio Code - Tips
+- Toggle Explorer
+	- Cmd B
+- Explore Left Hand Side Bar
+	- Search etc
+- Make a change to index.html
+	- Change Title
+- Make a change to App.js
+	- Remove everything in App div
+	- Add My Todo Application
+- How is the magic happening?
+	- Create React App
+	- Automatically builds and renders in the browser
