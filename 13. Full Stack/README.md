@@ -48,4 +48,23 @@
 		- You don't need to download and manage versions
 	- node_modules : Downloded dependencies (temp)
 
+# What is React?
+- React : One of the most popular JavaScript libraries to build SPA (Single Page Applications)
+	- Popular alternatives : Angular, VueJS
+- Open-source project created by Facebook
+- Component-Based
+- Mostly used to build front-end web SPA applications
+	- Can also be used to create native apps for Android, iOS (React Native)
+
+# Creating React App with Create React App
+- Create Reace App : Recommended way to create a new single-page application(SPA) using React
+	- Compatiable with macOS, Windows, Linux
+	- Prerequisite : Latest version of Node JS
+		- NPM - package manager : Install, delete, and update JS package (npm --version)
+		- NPX - package executer : Execute JS packages directly, without installing
+	- Let's start
+		- cd frontend
+		- npx create-react-app todo-app
+		- cd todo-app
+		- npm start
 
