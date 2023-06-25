@@ -155,4 +155,4 @@
 		- import FirstComponent from './components/learning-examples/FirstComponent';
 	- Named import
 		- import { FifthComponent } from './components/learning-examples/FirstComponent';
-
+2. Exercise: Create LearningComponent and move all code in App component to it!
