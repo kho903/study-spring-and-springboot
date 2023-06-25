@@ -105,3 +105,13 @@
 			- src/App.test.js - Unit tests for App component
 				- Unit test is right along side production code (Different to Java approach)
 
+# Understading React Components
+- First component typically loaded in React Apps : App Component
+- Parts of a Component
+	- View (JSX or JavaScript)
+	- Logic (JavaScript)
+	- Styling (CSS)
+	- State (Internal Data Store)
+	- Props (Pass Data)
+- (Remember) React component names must always start with a capital letter
+
