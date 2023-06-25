@@ -115,3 +115,11 @@
 	- Props (Pass Data)
 - (Remember) React component names must always start with a capital letter
 
+# Understanding State in React
+- State : Build-in React object used to contain data or information about the component
+- (REMEBER) In earlier versions of React, ONLY Class Components can have state
+	- AND implementing state was very complex!
+- Hooks were introduced in React 16.8
+	- Hooks are very easy to use
+	- useState hook allows adding state to Function Components
+
