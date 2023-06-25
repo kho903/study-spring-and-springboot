@@ -146,3 +146,13 @@
 	- Specify CSS class - className
 		- Simililar to HTML class attribute
 
+# Let's follow JavaScript Best Practices
+1. Each component in its own file (or module)
+- src\components\learning-examples\FirstComponent.jsx
+- Exercise: Move SecondComponent, ThirdComponent & FourthComponent to their own modules
+- To use a class from a different module, you need to import it
+	- Default import
+		- import FirstComponent from './components/learning-examples/FirstComponent';
+	- Named import
+		- import { FifthComponent } from './components/learning-examples/FirstComponent';
+
