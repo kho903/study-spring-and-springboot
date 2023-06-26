@@ -1,16 +1,18 @@
 import { useState } from "react";
 
-export default function Counter() {
+export default function Counter({by}) {
 
     // [0, f]
     const [count, setCount] = useState(0);
+    
+    console.log(by);
 
     function incrementCounterFunction() {
-        setCount(count + 1);
+        setCount(count + by);
     }
 
     function decrementCounterFunction() {
-        setCount(count - 1);
+        setCount(count - by);
     }
 
     return (
@@ -18,9 +20,9 @@ export default function Counter() {
             <span className="count">{count}</span>
             <div>
                 <button className="counterButton" onClick={incrementCounterFunction}>
-                    +1</button>
+                    +{by}</button>
                 <button className="counterButton" onClick={decrementCounterFunction}>
-                    -1</button>
+                    -{by}</button>
             </div>
         </div>
     )

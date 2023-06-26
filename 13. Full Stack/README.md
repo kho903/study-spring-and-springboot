@@ -199,4 +199,8 @@
 - Summary : We are NOT updating the DOM directly!
 	- React identifies changes and efficiently updates the DOM
 
+# Exploring React props
+- You can pass "props" (short for properties) object to a React Component
+- Used for things that remain a constant during lifetime of a Component
+	- Example increment Value of a specific component
 
