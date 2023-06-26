@@ -156,3 +156,14 @@
 	- Named import
 		- import { FifthComponent } from './components/learning-examples/FirstComponent';
 2. Exercise: Create LearningComponent and move all code in App component to it!
+
+# Digging Deeper into Components - Counter
+- Parts of a Component
+	- View (JSX or JavaScript)
+	- Logic (JavaScript)
+	- Styling (CSS)
+	- State (Internal Data Store)
+	- Props (Pass Data)
+- Let's learn more about each of these building another simple example
+	- A Counter App
+
