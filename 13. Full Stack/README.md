@@ -181,3 +181,22 @@
 	- How to share state between components?
 		- Move state "upwards" (to a parent component)
 
+# What's happening in the background with React?
+- We updated the state => React updated the view
+	- How can you update an HTML element?
+		- A HTML page is represented by DOM (Document Object Model)
+		- Each element in a HTML page is a node in the DOM
+		- HOWEVER, writing code to update the DOM can be complex and slow!
+	- React takes a different approach:
+		- Virtual DOM : "virtual" representation of a UI (kept in memory)
+			- React code updates Virtual DOM
+		- React identifies changes and synchronizes them to HTML page
+			- 1. React creates Virtual DOM v1 on load of page
+			- 2. You perform an action
+				- 3. React creates Virtual DOM v2 as a result of your action
+				- 4. React performs a diff between v1 and v2
+				- 5. React synchronizes changes (update HTML page)
+- Summary : We are NOT updating the DOM directly!
+	- React identifies changes and efficiently updates the DOM
+
+
