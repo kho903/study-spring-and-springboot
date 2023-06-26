@@ -167,3 +167,17 @@
 - Let's learn more about each of these building another simple example
 	- A Counter App
 
+# Understanding State in React
+- State : Built-in React object used to contain data or information about the component
+- (REMEMBER) In earlier versions of React, ONLY Class Components can have state
+	- AND implementing state was very complex!
+- Hooks were introduced in React 16.8
+	- Hooks are very easy to use
+	- useState hook allows adding state to Function Components
+		- useState returns two things
+			- 1. Current state
+			- 2. A function to update state
+	- Each instance of component has it's own state
+	- How to share state between components?
+		- Move state "upwards" (to a parent component)
+
