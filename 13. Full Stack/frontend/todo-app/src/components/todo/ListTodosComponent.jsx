@@ -1,15 +1,20 @@
 import { useEffect, useState } from "react";
 import { deleteTodoApi, retrieveAllTodosForUsernameApi } from "./api/TodoApiService";
+import { useAuth } from "./security/AuthContext";
 
 function ListTodosComponent() {
 
     const [todos, setTodos] = useState([]);
     const [message, setMessage] = useState(null);
 
+    const authContext = useAuth();
+
+    const username = authContext.username;
+
     useEffect(() => refreshTodos(), [])
 
     function refreshTodos() {
-        retrieveAllTodosForUsernameApi('user')
+        retrieveAllTodosForUsernameApi(username)
             .then(response => {
                 // console.log(response)
                 setTodos(response.data)
@@ -19,7 +24,7 @@ function ListTodosComponent() {
 
     function deleteTodo(id) {
         console.log('clicked ' + id)
-        deleteTodoApi('user', id)
+        deleteTodoApi(username, id)
             .then(
                 // 1. Display message
                 // 2. Update Todos list
