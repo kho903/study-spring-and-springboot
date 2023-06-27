@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
-import { retrieveHelloWorldBean } from "./api/HelloWorldApiService";
+import { retrieveHelloPathVariable } from "./api/HelloWorldApiService";
 
 function WelcomeComponent() {
     
@@ -10,9 +10,7 @@ function WelcomeComponent() {
 
     function callHelloWorldBeanRestApi() {
         console.log('called')
-        // axios
-        // axios.get('http://localhost:8080/hello-world-bean')
-        retrieveHelloWorldBean()
+        retrieveHelloPathVariable('JIKIM')
             .then((response) => successfulResponse(response))
             .catch((error) => errorResponse(error))
             .finally(() => console.log('cleanup'))
@@ -35,7 +33,7 @@ function WelcomeComponent() {
             </div>
             <div>
                 <button className="btn btn-success m-5" onClick={callHelloWorldBeanRestApi}>
-                    Call Hello World Bean REST API
+                    Call Hello World
                 </button>
             </div>
             <div className="text-info">{message}</div>
