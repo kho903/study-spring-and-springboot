@@ -11,9 +11,9 @@ export const retrieveHelloWorldBean
 
 // header is present on the requested resource. => Authorization header
 export const retrieveHelloPathVariable
-    = (username) => apiClient.get(`/hello-world/path-variable/${username}`, {
+    = (username, token) => apiClient.get(`/hello-world/path-variable/${username}`, {
         headers: {
-            Authorization: 'Basic dXNlcjoxMjM0'
+            Authorization: token
         }
     })
 
