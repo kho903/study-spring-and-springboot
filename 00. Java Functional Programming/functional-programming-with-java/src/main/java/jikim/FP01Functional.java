@@ -33,14 +33,14 @@ public class FP01Functional {
 		// }
 	}
 
-	private static boolean isEven(int number) {
-		return number % 2 == 0;
-	}
+	// private static boolean isEven(int number) {
+	// 	return number % 2 == 0;
+	// }
 
 	private static void printEvenNumbersInListFunctional(List<Integer> numbers) {
 		numbers.stream()
 			// Filter - Only Allow Even Numbers
-			.filter(FP01Functional::isEven)
+			.filter(number -> number % 2 == 0) // Lambda Expression
 			.forEach(System.out::println);
 	}
 }
