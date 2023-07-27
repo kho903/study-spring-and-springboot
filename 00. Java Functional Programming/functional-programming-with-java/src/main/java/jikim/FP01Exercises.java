@@ -27,6 +27,19 @@ public class FP01Exercises {
 		courses.stream()
 			.filter(course -> course.length() >= 4)
 			.forEach(System.out::println);
+
+		System.out.println("===== Print the cubes of odd numbers =====");
+		numbers.stream()
+			.filter(number -> number % 2 == 0)
+			.map(number -> number * number * number)
+			.forEach(System.out::println);
+
+		System.out.println("===== Print the number of characters in each course name =====");
+		courses.stream()
+			// .map(course -> course.length())
+			.map(String::length)
+			.forEach(System.out::println);
+
 	}
 
 	private static void printOddNumbersInListFunctional(List<Integer> numbers) {
